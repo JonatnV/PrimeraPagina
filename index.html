@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title> Clase PNT 08-02-23 </title>
+	</head>
+
+
+	<body>
+		<h1>1.Botones con Alertas y Confirmaciones:</h1>
+
+		<button>Este boton no hace nada!</button>
+		<br><br>
+
+		<button onclick="accion_1()" id="Bt1"> Boton 1</button>
+		<br>
+		<button onclick="accion_2()" id="Bt2"> Boton 2</button>
+		<br>
+		<button onclick="accion_3()" id="Bt3"> Boton 3</button>
+		<br><br><br>
+
+		<h2>2.Despliegue de datos:</h2>
+		<p>
+			Hola, a continnuación solicitaremos algunos datos personales, esperamos nos puedas colaborar con tu información. Gracias
+		</p>
+
+		Primer nombre:<input type="text" name="Recibir Texto 1" id="Txt_1">
+		
+		Segundo nombre: <input type="text" name="Recibir Texto 2" id="Txt_2">
+
+		<br>
+		<p>
+			Primer Apellido: <input type="text" name="Recibir Texto 2" id="Txt_3">
+		</p>
+		<p>
+			Segundo Apellido: <input type="text" name="Recibir Texto 4" id="Txt_4">
+		</p>
+
+		<button onclick="accion_4()" id="Bt4">CONCATENAR</button>
+		<br><br>
+
+		Nombres: &nbsp;<output id="Out1"> </output> y Apellidos: &nbsp;<output id="Out2"></output>
+
+		<style type="text/css">
+			/* Comentario css   */
+			body{	
+				background-image:url(flori.JPG) ;
+				background-repeat: round;
+				color: rgba(8, 112, 0,1.0);
+			}
+			h1{
+				color: rgba(202, 114, 8, 1.0);
+			}
+			h2{
+				color: rgba(202, 114, 8, 0.8);
+			}
+			#Out1{
+				color: rgba(134, 4, 4, 1.0);
+			}
+			#Out2{
+				color: rgba(48, 151, 162, 1.0);
+			}
+		</style>
+
+		<script type="text/javascript">
+			// Esto es un comentario en Javascript
+
+			function accion_1() {
+				// body...
+				alert("Boton 1 , Alerta")
+			}
+			function accion_2(){
+				confirm("Boton2, Confirmacion!!")
+			}
+			function accion_3() {
+				// body...
+				alert("Alerta del boton 3")
+				confirm("Confirmacion del boton 3")
+			}
+			function accion_4()
+			{
+				var nombreCompleto = document.getElementById("Txt_1").value+" "+
+									 document.getElementById("Txt_2").value+" "+
+									 document.getElementById("Txt_3").value+" "+
+									 document.getElementById("Txt_4").value
+
+				alert(nombreCompleto)
+
+				var nombres =document.getElementById("Txt_1").value+" "+
+							 document.getElementById("Txt_2").value
+
+				document.getElementById("Out1").innerHTML=nombres
+
+				var apellidos=document.getElementById("Txt_3").value+" "+
+							  document.getElementById("Txt_4").value
+
+				document.getElementById("Out2").innerHTML=apellidos
+			}
+
+		</script>
+
+	</body>
+</html>
